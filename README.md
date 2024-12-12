@@ -6,3 +6,4 @@ A curated list with my various container deployments that I use on my homelab
 [Homepage](/deployments/Homepage/)
 [NextCloud](/deployments/NextCloud/)
 [Nginx Proxy Manager](/deployments/NPM/)
+[Syncthing](/deployments/Syncthing/)

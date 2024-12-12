@@ -1,0 +1,28 @@
+version: "3"
+services:
+    postgres_triple:
+        container_name: postgres_triple
+        image: postgres:9.5
+        volumes:
+            - pgdata_triple:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_PASSWORD=postgres
+    postgres:
+        container_name: postgres
+        image: postgres:9.5
+        volumes:
+            - pgdata:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_PASSWORD=postgres
+    collectiwise:
+        container_name: collectiwise
+        build: .
+        image: collectiwise/main
+        ports:
+            - "8090:80"
+        environment:
+            - DB_HOST=postgres
+            - COLLECTIWISE_BRANCH=${BRANCH}
+volumes:
+    pgdata:
+    pgdata_triple:
